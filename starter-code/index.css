@@ -257,6 +257,7 @@ select {
 }
 
 .underline-indicators > * {
+    cursor: pointer;
     padding: var(--underline-gap, 1rem) 0;
     border: 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
@@ -267,6 +268,58 @@ select {
     border-color: hsl( var(--clr-white) / .5);
 }
 
-.underline-indicators > .active{
+.underline-indicators > .active, 
+.underline-indicators > [aria-selected="true"] {
+    color: hsl( var(--clr-white) / 1 );
+    border-color: hsl( var(--clr-white) / 1);
+}
+
+.tab-list {
+    --gap: 2rem;
+}
+
+.dot-indicators > * {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: 0.5em;
+    content: '';
+    background-color: hsl( var(--clr-white) / 0.25);
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+    background-color: hsl( var(--clr-white) 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white) );
+}
+
+.number-indicators > * {
+    content: '';
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: 0 1em;
+    background-color: hsl( var(--clr-dark));
+    border: 0.1rem;
+    border-style: solid;
+    border-color: hsl( var(--clr-white) / 0.25) ;
+    color: hsl( var(--clr-white) );
+}
+
+.number-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white));
+    border-color: hsl( var(--clr-white) );
+    color:hsl( var(--clr-dark) );
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
     border-color: hsl( var(--clr-white) / 1);
 }
